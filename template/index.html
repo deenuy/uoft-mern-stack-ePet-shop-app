@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    
+	<!-- Google Font CDN -->
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    
+	<!-- Custom icons CDN -->
+	<script src="https://kit.fontawesome.com/3e0c607514.js" crossorigin="anonymous"></script> 
+
+    <!-- Custom CDN CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Amazona</title>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+                <button onclick="openMenu()">
+                    &#9776;
+                </button>
+                <a href="index.html">amazona</a>
+            </div>
+            <div class="header-links">
+                <a href="cart.html">Cart</a>
+                <a href="signin.html">Sign In</a>
+            </div>
+        </header>
+        <aside class="sidebar">
+            <a id="hmenu-customer-profile-link" onclick="$Nav.getNow('signInRedirect')('nav_em_hd_re_signin', 'https://www.amazon.ca/ap/signin?openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.ca%2F%3F_encoding%3DUTF8%26ref_%3Dnav_em_hd_re_signin&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=caflex&amp;openid.mode=checkid_setup&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;&amp;ref_=nav_em_hd_clc_signin', 'nav_em_hd_clc_signin')" data-nav-ref="nav_em_hd_re_signin">
+                <div id="hmenu-customer-profile">
+                    <div class="customer-profile"> <span class="profile-icon"><i class="far fa-user-circle"></i></span> Hello, Sign in</div>
+                    <button class="sidebar-close-button" onclick="closeMenu()">X</button>
+                </div>
+            </a>    
+            <div class="hmenu-header">Shop by Category</div>
+            <ul class="hmenu-content">
+                <li>
+                    <a href="index.html" class="hmenu-item" data-menu-id="1">Fashion</a>
+                    <i class="fas fa-chevron-right hmenu-icon"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="hmenu-item" data-menu-id="1">Food</a>
+                    <i class="fas fa-chevron-right hmenu-icon"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="hmenu-item" data-menu-id="1">Pet Care</a>
+                    <i class="fas fa-chevron-right hmenu-icon"></i>
+                    </a>
+                </li>
+            </ul>
+            
+        </aside>
+        <main class="main">
+            <div class="content">
+                <ul class="products">
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="img/img2.jpeg" alt="product image">
+                            <div class="product-name">
+                                <a href="product.html">Slim Shift</a>
+                            </div>
+                            <div class="product-brand">Nike</div>
+                            <div class="product-price">$60</div>
+                            <div class="product-rating">4.5 Stars (10 Reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="img/img2.jpeg" alt="product image">
+                            <div class="product-name">
+                                <a href="product.html">Slim Shift</a>
+                            </div>
+                            <div class="product-brand">Nike</div>
+                            <div class="product-price">$60</div>
+                            <div class="product-rating">4.5 Stars (10 Reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="img/img2.jpeg" alt="product image">
+                            <div class="product-name">
+                                <a href="product.html">Slim Shift</a>
+                            </div>
+                            <div class="product-brand">Nike</div>
+                            <div class="product-price">$60</div>
+                            <div class="product-rating">4.5 Stars (10 Reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="img/img2.jpeg" alt="product image">
+                            <div class="product-name">
+                                <a href="product.html">Slim Shift</a>
+                            </div>
+                            <div class="product-brand">Nike</div>
+                            <div class="product-price">$60</div>
+                            <div class="product-rating">4.5 Stars (10 Reviews)</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <img class="product-image" src="img/img2.jpeg" alt="product image">
+                            <div class="product-name">
+                                <a href="product.html">Slim Shift</a>
+                            </div>
+                            <div class="product-brand">Nike</div>
+                            <div class="product-price">$60</div>
+                            <div class="product-rating">4.5 Stars (10 Reviews)</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer class="footer">
+            All rights reserved
+        </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+        function openMenu(){
+            document.querySelector(".sidebar").classList.add("open");
+        }
+        function closeMenu(){
+            document.querySelector(".sidebar").classList.remove("open");
+        }
+    </script>
+</body>
+</html>

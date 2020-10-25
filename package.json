@@ -1,0 +1,19 @@
+{
+  "name": "mern-stack-amazona-web-app",
+  "version": "1.0.0",
+  "description": "eCommerce app developed in react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deenuy/mern-stack-amazona-web-app.git"
+  },
+  "author": "deenuy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deenuy/mern-stack-amazona-web-app/issues"
+  },
+  "homepage": "https://github.com/deenuy/mern-stack-amazona-web-app#readme"
+}
