@@ -1,5 +1,6 @@
 export default {
     products: [{
+        _id: '1',
         name: "Slim Shirt",
         category: 'Shirts',
         image: '/imgs/img2.jpeg',
@@ -9,6 +10,7 @@ export default {
         numReviews: 44
     },
     {
+        _id: '2',
         name: "Polo Shirt",
         category: 'Shirts',
         image: '/imgs/img2.jpeg',
@@ -18,6 +20,7 @@ export default {
         numReviews: 20
     },
     {
+        _id: '3',
         name: "Slim Shirt",
         category: 'Shirts',
         image: '/imgs/img2.jpeg',
@@ -27,6 +30,7 @@ export default {
         numReviews: 30
     },
     {
+        _id: '4',
         name: "Slim Shirt",
         category: 'Shirts',
         image: '/imgs/img2.jpeg',
@@ -36,6 +40,7 @@ export default {
         numReviews: 25
     },
     {
+        _id: '5',
         name: "Slim Shirt",
         category: 'Shirts',
         image: '/imgs/img2.jpeg',
