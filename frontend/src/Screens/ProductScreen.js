@@ -54,7 +54,7 @@ function ProductScreen (props){
                     <li>
                         <button className="button-prm button-linear-grd">
                             {/* To be improved Checkout Icon */}
-                            <i class="fas fa-shopping-cart"></i>
+                            <i className="fas fa-shopping-cart"></i>
                             Add to Cart
                         </button>
                     </li>
