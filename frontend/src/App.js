@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 // import data from './data';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
-import HomeScreen from './Screens/HomeScreen';
-import ProductScreen from './Screens/ProductScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 
 function App() {
