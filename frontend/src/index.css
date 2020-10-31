@@ -28,6 +28,7 @@ body{
 .header{
   grid-area: header;
   background: rgba(0,0,0,0.8);
+  box-shadow: 0 0.3125rem 0.625rem 0 rgba(0,0,0,0.15);
   backdrop-filter: saturate(180%) blur(20px);
   color: #ffffff;
   display: flex;
@@ -73,7 +74,48 @@ a:hover{
   color: #ff8000;
 }
 
+/* Filters */
+
+.filter ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filter ul li a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+.row [class*="col-"] {
+  float: left;
+  margin: 0.5rem 0.8%;
+  min-height: 0.125rem;
+  box-sizing: border-box;
+}
+
+.filter-pet{
+  width: 9rem;
+  height: 9rem;
+}
+
+.filter-name{
+  text-align: center;
+}
+
 /* Home Screen */
+.product-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+.product-results{
+  padding-left: 1rem;
+  color: #808080;
+}
 .products{
   display: flex;
   justify-content: flex-start;
