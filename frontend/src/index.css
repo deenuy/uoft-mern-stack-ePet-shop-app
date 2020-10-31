@@ -37,7 +37,7 @@ body{
 }
 
 .brand a{
-  color: #ffffff;
+  color: #ff8000;
   font-size: 2.5rem;
   font-weight: bold;
   text-decoration: none;
@@ -47,6 +47,7 @@ body{
 .header-links a{
   color: #ffffff;
   text-decoration: none;
+  margin: 1.4rem;
 }
 
 .header-links a:hover{
@@ -75,21 +76,36 @@ a:hover{
 /* Home Screen */
 .products{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 .products li{
   list-style: none;
   padding: 0;
-  flex: 0 1 34rem;
+  flex: 0 1 20rem;
   margin: 1rem;
-  height: 50rem;
-  border-bottom: .1rem #c0c0c0 solid;
+  height: 22rem;
+  border: .1rem #c0c0c0 solid;
+  border-radius: 4px;
+}
+
+.products li{
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.15);
+}
+
+.products li:hover{
+  box-shadow: 0px 0px 2.5px 2.5px rgb(201, 209, 215);
 }
 
 .product{
+  padding-left: 1rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -97,7 +113,7 @@ a:hover{
 }
 
 .product-name{
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
@@ -107,17 +123,18 @@ a:hover{
 }
 
 .product-price{
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
 .product-image{
-  max-width: 34rem;
-  max-height: 34rem;
+  max-width: 12rem;
+  max-height: 12rem;
 }
 
 .product-rating{
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* sidebar */
