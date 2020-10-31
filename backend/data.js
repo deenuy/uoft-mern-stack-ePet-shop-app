@@ -1,5 +1,6 @@
 export default {
   products: [{
+    "petClass": "Cat",
     "name": "WholeHearted Grain",
     "description": "WholeHearted Grain Free All Life Stages Beef & Pea Formula Dry Dog Food, 25 lbs.",
     "category": "Food",
@@ -11,6 +12,7 @@ export default {
     "countInStock": 10
   },
   {
+    "petClass": "Dog",
     "name": "Greenies Blueberry Flavor",
     "description": "Greenies Blueberry Flavor Regular Size Dog Dental Chews, 12 oz.",
     "category": "Food",
@@ -22,6 +24,7 @@ export default {
     "countInStock": 13
   },
   {
+    "petClass": "Cat",
     "name": "Blue Buffalo Life Protection",
     "description": "Blue Buffalo Life Protection Formula Natural Senior Chicken and Brown Rice Dry Dog Food, 30 lbs.",
     "category": "Food",
@@ -33,6 +36,7 @@ export default {
     "countInStock": 50
   },
   {
+    "petClass": "Dog",
     "name": "Blue Buffalo Wilderness",
     "description": "Blue Buffalo Wilderness Natural Senior High Protein Grain Free Chicken Dry Dog Food, 24 lbs",
     "category": "Food",
@@ -44,6 +48,7 @@ export default {
     "countInStock": 110
   },
   {
+    "petClass": "Cat",
     "name": "KONG Wubba Weave",
     "description": "KONG Wubba Weave Dog Toy, Small",
     "category": "Toy",
@@ -55,6 +60,7 @@ export default {
     "countInStock": 234
   },
   {
+    "petClass": "Cat",
     "name": "KONG Wubba Finz",
     "description": "KONG Wubba Finz Blue Toy for Dog, Small",
     "category": "Toy",
@@ -66,6 +72,7 @@ export default {
     "countInStock": 71
   },
   {
+    "petClass": "Cat",
     "name": "KONG SoftSeas Octopus",
     "description": "KONG SoftSeas Octopus Dog Toy, Small",
     "category": "Toy",
@@ -77,6 +84,7 @@ export default {
     "countInStock": 97
   },
   {
+    "petClass": "Cat",
     "name": "KONG SoftSeas Turtle",
     "description": "KONG SoftSeas Turtle Dog Toy, Small",
     "category": "Toy",
@@ -88,6 +96,7 @@ export default {
     "countInStock": 85
   },
   {
+    "petClass": "Cat",
     "name": "Wellness Natural Grain",
     "description": "Wellness Natural Grain Free Lamb & Salmon Recipe Soft Puppy Bites Dog Treats, 3 oz",
     "category": "Food",
@@ -99,6 +108,7 @@ export default {
     "countInStock": 49
   },
   {
+    "petClass": "Dog",
     "name": "Nylabone Blue Bone",
     "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
     "category": "Toy",
