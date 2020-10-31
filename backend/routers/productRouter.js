@@ -21,12 +21,12 @@ productRouter.get(
   })
 );
 
-productRouter.post(
+productRouter.get(
   '/seed',
   expressAsyncHandler(async (req, res) => {
     await Product.remove({});
     console.log(JSON.stringify(data));
-    const createdProducts = await Product.insertMany(req.body.products);
+    const createdProducts = await Product.insertMany(data.products);
     res.send({ createdProducts });
   })
 );
