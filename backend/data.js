@@ -118,6 +118,66 @@ export default {
     "rating": 4.5,
     "numReviews": 83,
     "countInStock": 18
+  },
+  {
+    "petClass": "Dog",
+    "name": "Nylabone Blue Bone",
+    "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
+    "category": "Toy",
+    "image": "/uploads/img-10.jpg",
+    "price": 1.99,
+    "brand": "Wellness",
+    "rating": 4.5,
+    "numReviews": 83,
+    "countInStock": 18
+  },
+  {
+    "petClass": "Dog",
+    "name": "Nylabone Blue Bone",
+    "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
+    "category": "Toy",
+    "image": "/uploads/img-10.jpg",
+    "price": 1.99,
+    "brand": "Wellness",
+    "rating": 4.5,
+    "numReviews": 83,
+    "countInStock": 18
+  },
+  {
+    "petClass": "Dog",
+    "name": "Nylabone Blue Bone 01",
+    "description": "Nylabone Blue Bone 01 Chicken Puppy Chew, X-Small",
+    "category": "Toy",
+    "image": "/uploads/img-10.jpg",
+    "price": 1.99,
+    "brand": "Wellness",
+    "rating": 3.9,
+    "numReviews": 87,
+    "countInStock": 18
+  },
+  {
+    "petClass": "Dog",
+    "name": "Nylabone Blue Bone 02",
+    "description": "Nylabone Blue Bone 02 Chicken Puppy Chew, X-Small",
+    "category": "Toy",
+    "image": "/uploads/img-10.jpg",
+    "price": 2.99,
+    "brand": "Wellness",
+    "rating": 3.5,
+    "numReviews": 72,
+    "countInStock": 18
+  },
+  {
+    "petClass": "Dog",
+    "name": "Nylabone Blue Bone 03",
+    "description": "Nylabone Blue Bone 03 Chicken Puppy Chew, X-Small",
+    "category": "Toy",
+    "image": "/uploads/img-10.jpg",
+    "price": 3.99,
+    "brand": "Wellness",
+    "rating": 4.7,
+    "numReviews": 12,
+    "countInStock": 18
   }
   ]
 }
