@@ -17,10 +17,11 @@ const listProducts = () => async (dispatch) => {
 }
 
 const detailsProduct = (productId) => async (dispatch) => {
-    // console.log(productId);
+    console.log(productId);
     try{
         dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId});
-        const {data} = await axios.get("/" + productId);
+        const {data} = await axios.get("/api/products/" + productId);
+        console.log(data);
         dispatch({type: PRODUCT_DETAILS_SUCCESS, payload: data});
     }
     catch(error){
