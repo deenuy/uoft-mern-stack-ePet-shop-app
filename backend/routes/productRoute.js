@@ -1,11 +1,23 @@
 import express from 'express';
 import Product from '../models/productModel';
 import { isAuth, isAdmin } from '../util';
+import data from '../data.js';
 
 const router = express.Router();
 
+router.get('/seed', async (req, res) => {
+  try {
+    await Product.deleteMany();
+    const insertedProds = await Product.insertMany(data.products);
+    res.send(insertedProds);	
+  } catch (error) {
+    res.status(404).send({msg: "ERROR => " + error});
+  }
+});
+
 router.get('/', async (req, res) => {
   const category = req.query.category ? { category: req.query.category } : {};
+  const petClass = req.query.petClass ? { petClass: req.query.petClass } : {};
   const searchKeyword = req.query.searchKeyword
     ? {
       name: {
@@ -19,7 +31,7 @@ router.get('/', async (req, res) => {
       ? { price: 1 }
       : { price: -1 }
     : { _id: -1 };
-  const products = await Product.find({ ...category, ...searchKeyword }).sort(
+  const products = await Product.find({ ...category, ...searchKeyword, ...petClass }).sort(
     sortOrder
   );
   res.send(products);

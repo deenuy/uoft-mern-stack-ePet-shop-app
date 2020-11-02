@@ -24,7 +24,7 @@ export default {
     "countInStock": 13
   },
   {
-    "petClass": "Cat",
+    "petClass": "Fish",
     "name": "Blue Buffalo Life Protection",
     "description": "Blue Buffalo Life Protection Formula Natural Senior Chicken and Brown Rice Dry Dog Food, 30 lbs.",
     "category": "Food",
@@ -121,7 +121,7 @@ export default {
   },
   {
     "petClass": "Dog",
-    "name": "Nylabone Blue Bone",
+    "name": "Nylabone Blue Bone test1",
     "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
     "category": "Toy",
     "image": "/uploads/img-10.jpg",
@@ -133,7 +133,7 @@ export default {
   },
   {
     "petClass": "Dog",
-    "name": "Nylabone Blue Bone",
+    "name": "Nylabone Blue Bone test2",
     "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
     "category": "Toy",
     "image": "/uploads/img-10.jpg",
@@ -168,7 +168,7 @@ export default {
     "countInStock": 18
   },
   {
-    "petClass": "Dog",
+    "petClass": "Fish",
     "name": "Nylabone Blue Bone 03",
     "description": "Nylabone Blue Bone 03 Chicken Puppy Chew, X-Small",
     "category": "Toy",
