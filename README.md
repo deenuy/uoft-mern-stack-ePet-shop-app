@@ -52,7 +52,7 @@ The data is retrieved from Yahoo Finance API, Yahoo Finance API is a reliable so
 ## Code Contributors
 
 Applauds behind the success of the project [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/kefranabg/readme-md-generator/graphs/contributors"><img src="https://opencollective.com/readme-md-generator/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/deenuy/uoft-mern-stack-ePet-shop-app/graphs/contributors"><img src="https://github.com/deenuy/uoft-mern-stack-ePet-shop-app/graphs/contributors" /></a>
 
 ## Credits:
 * Deenu Yadav
