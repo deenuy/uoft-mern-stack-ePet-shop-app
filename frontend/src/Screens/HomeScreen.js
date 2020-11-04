@@ -10,24 +10,18 @@ function HomeScreen (props){
   // const [products, setProduct] = useState([]);
   const productList = useSelector(state => state.productList);
   const { products, loading, error } = productList;
+  const [petClass, setPetClass] = useState('');
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(listProducts())
-
-    // const fetchData = async () => {
-    //   const {data} = await axios.get("api/products");
-    //   setProduct(data);
-    //   console.log(data);
-    // }
-    
-    // fetchData();
+    console.log(petClass);
+    dispatch(listProducts(petClass))
 
     return () => {
       // 
     }
-  }, [])
+  }, [petClass]);
 
   return loading? <div>Loading...</div> : 
     error? <div>{error}</div> :
@@ -37,51 +31,58 @@ function HomeScreen (props){
         <ul className="list-unstyled list-inline row">
           <li className="col-2 col-4-sm text-center">
             <div>
-              <a href="">
-              <img className="filter-pet" src="/imgs/shop-by-dog.jpg" alt="Dog"/>
-              </a>
+              <button onClick={() => setPetClass("Dog")}>
+                <img className="filter-pet" src="/imgs/shop-by-dog.jpg" alt="Dog"/>
+              </button>
             </div>
             <p className="filter-name">Dog</p>
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <a href="">
-              <img className="filter-pet" src="/imgs/shop-by-cat.jpg" alt="Cat"/>
-              </a>
+              <button onClick={() => setPetClass("Cat")}>
+                <img className="filter-pet" src="/imgs/shop-by-cat.jpg" alt="Cat"/>
+              </button>
             </div>
             <p className="filter-name">Cat</p>
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <a href="">
-              <img className="filter-pet" src="/imgs/shop-by-fish.jpg" alt="Fish"/>
-              </a>
+              <button onClick={() => setPetClass("Fish")}>
+                <img className="filter-pet" src="/imgs/shop-by-fish.jpg" alt="Fish"/>
+              </button>
             </div>
             <p className="filter-name">Fish</p>
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <a href="">
-              <img className="filter-pet" src="/imgs/shop-by-small-pet.jpg" alt="Small Pet"/>
-              </a>
+              <button onClick={() => setPetClass("Small Pet")}>
+                <img className="filter-pet" src="/imgs/shop-by-small-pet.jpg" alt="Small Pet"/>
+              </button>
             </div>
             <p className="filter-name">Small Pet</p>
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <a href="">
-              <img className="filter-pet" src="/imgs/shop-by-reptile.jpg" alt="Reptile"/>
-              </a>
+              <button onClick={() => setPetClass("Reptile")}>
+                <img className="filter-pet" src="/imgs/shop-by-reptile.jpg" alt="Reptile"/>
+              </button>
             </div>
             <p className="filter-name">Reptile</p>
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <a href="">
-              <img className="filter-pet" src="/imgs/shop-by-bird.jpg" alt="Bird"/>
-              </a>
+              <button onClick={() => setPetClass("Bird")}>
+                <img className="filter-pet" src="/imgs/shop-by-bird.jpg" alt="Bird"/>
+                </button>
             </div>
             <p className="filter-name">Bird</p>
+          </li>
+          <li className="col-2 col-4-sm text-center">
+            <div>
+              <button onClick={() => setPetClass("")}>
+                All
+              </button>
+            </div>
           </li>
         </ul>
       </div>
