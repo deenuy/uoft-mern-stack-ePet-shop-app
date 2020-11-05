@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 // import data from './data';
-import {BrowserRouter, Link, Route} from 'react-router-dom';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
-
+import ProductCRUD_Screen from './screens/ProductCRUD_Screen';
 
 function App() {
   const openMenu = () => {
@@ -19,7 +19,7 @@ function App() {
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>
-                &#9776;
+              &#9776;
             </button>
             <Link to="/">ePet-shop</Link>
           </div>
@@ -27,6 +27,7 @@ function App() {
             <a href="services.html">Services</a>
             <a href="cart.html">Cart</a>
             <a href="signin.html">Sign In</a>
+            <Link to="/ProductCRUD">Product (CRUD)</Link>
           </div>
         </header>
         <aside className="sidebar">
@@ -35,7 +36,7 @@ function App() {
               <div className="customer-profile"> <span className="profile-icon"><i className="far fa-user-circle"></i></span> Hello, Sign in</div>
               <button className="sidebar-close-button" onClick={closeMenu}>X</button>
             </div>
-          </a>    
+          </a>
           <div className="hmenu-header">Shop by Category</div>
           <ul className="hmenu-content">
             <li>
@@ -45,21 +46,22 @@ function App() {
               </a>
             </li>
             <li>
-                <a href="index.html" className="hmenu-item" data-menu-id="1">
-                  Food
+              <a href="index.html" className="hmenu-item" data-menu-id="1">
+                Food
                   <i className="fas fa-chevron-right hmenu-icon"></i>
-                </a>
+              </a>
             </li>
             <li>
-                <a href="index.html" className="hmenu-item" data-menu-id="1">
-                  Pet Care
+              <a href="index.html" className="hmenu-item" data-menu-id="1">
+                Pet Care
                   <i className="fas fa-chevron-right hmenu-icon"></i>
-                </a>
+              </a>
             </li>
           </ul>
         </aside>
         <main className="main">
           <div className="content">
+            <Route path="/ProductCRUD" component={ProductCRUD_Screen} />
             <Route path="/product/:id" exact={true} component={ProductScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
           </div>
