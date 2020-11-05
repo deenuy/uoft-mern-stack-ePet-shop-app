@@ -16,7 +16,8 @@ function HomeScreen (props){
 
   useEffect(() => {
     console.log(petClass);
-    dispatch(listProducts(petClass))
+    dispatch(listProducts(petClass));
+    console.log("useEffect 2 (HomeScreen) = " + JSON.stringify(products));
 
     return () => {
       // 
