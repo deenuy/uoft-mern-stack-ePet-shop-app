@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { detailsProduct } from '../actions/productActions';
-import data from '../data';
 
 function ProductScreen (props){
     console.log(props.match.params.id);

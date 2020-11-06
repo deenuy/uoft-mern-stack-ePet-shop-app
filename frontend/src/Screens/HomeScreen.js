@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import data from '../data'; /* Static Data object */
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,10 +14,7 @@ function HomeScreen (props){
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(petClass);
     dispatch(listProducts(petClass));
-    console.log("useEffect 2 (HomeScreen) = " + JSON.stringify(products));
-
     return () => {
       // 
     }
