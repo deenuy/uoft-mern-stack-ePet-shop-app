@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-// import data from './data';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -24,10 +23,9 @@ function App() {
             <Link to="/">ePet-shop</Link>
           </div>
           <div className="header-links">
-            <a href="services.html">Services</a>
+            <Link to="/ProductCRUD">Services</Link>
             <a href="cart.html">Cart</a>
             <a href="signin.html">Sign In</a>
-            <Link to="/ProductCRUD">Product (CRUD)</Link>
           </div>
         </header>
         <aside className="sidebar">

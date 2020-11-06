@@ -8,6 +8,7 @@ function ProductsCRUD_Screen(props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [id, setId] = useState('');
   const [name, setName] = useState('');
+  const [petClass, setPetClass] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
   const [brand, setBrand] = useState('');
@@ -25,21 +26,20 @@ function ProductsCRUD_Screen(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("useEffect 1");
-    //if (successSave) {
-    //  setModalVisible(false);
-    //}
+    if (successSave) {
+      setModalVisible(false);
+    }
     dispatch(listProducts());
-    console.log("useEffect 2 = " + JSON.stringify(products));
     return () => {
       //
     };
-  },[]); //[successSave, successDelete]);
+  },[successSave, successDelete]);
 
   const openModal = (product) => {
     setModalVisible(true);
     setId(product._id);
     setName(product.name);
+    setPetClass(product.petClass);
     setPrice(product.price);
     setDescription(product.description);
     setImage(product.image);
@@ -52,6 +52,7 @@ function ProductsCRUD_Screen(props) {
     dispatch(
       saveProduct({
         _id: id,
+        petClass,
         name,
         price,
         image,
@@ -105,6 +106,16 @@ function ProductsCRUD_Screen(props) {
                 {errorSave && <div>{errorSave}</div>}
               </li>
 
+              <li>
+                <label htmlFor="name">Pet Class</label>
+                <input
+                  type="text"
+                  name="petClass"
+                  value={petClass}
+                  id="petClass"
+                  onChange={(e) => setPetClass(e.target.value)}
+                ></input>
+              </li>
               <li>
                 <label htmlFor="name">Name</label>
                 <input
@@ -194,12 +205,14 @@ function ProductsCRUD_Screen(props) {
           </form>
         </div>
       )}
-
+       
+      {products && !modalVisible && ( 
       <div className="product-list">
         <table className="table">
           <thead>
             <tr>
               <th>ID</th>
+              <th>Pet Class</th>
               <th>Name</th>
               <th>Price</th>
               <th>Category</th>
@@ -211,6 +224,7 @@ function ProductsCRUD_Screen(props) {
             {products.map((product) => (
               <tr key={product._id}>
                 <td>{product._id}</td>
+                <td>{product.petClass}</td>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.category}</td>
@@ -230,7 +244,7 @@ function ProductsCRUD_Screen(props) {
             ))}
           </tbody>
         </table>
-      </div>
+      </div>)}
     </div>
   );
 }
