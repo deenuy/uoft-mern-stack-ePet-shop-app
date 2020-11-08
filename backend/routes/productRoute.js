@@ -1,6 +1,5 @@
 import express from 'express';
 import Product from '../models/productModel';
-import { isAuth, isAdmin } from '../util';
 import data from '../data.js';
 
 const router = express.Router();
@@ -45,10 +44,12 @@ router.get('/:id', async (req, res) => {
     res.status(404).send({ message: 'Product Not Found.' });
   }
 });
-router.post('/:id/reviews', isAuth, async (req, res) => {
+
+router.post('/:id/reviews', async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
     const review = {
+
       name: req.body.name,
       rating: Number(req.body.rating),
       comment: req.body.comment,
@@ -67,10 +68,11 @@ router.post('/:id/reviews', isAuth, async (req, res) => {
     res.status(404).send({ message: 'Product Not Found' });
   }
 });
-router.put('/:id', isAuth, isAdmin, async (req, res) => {
+router.put('/:id', async (req, res) => {
   const productId = req.params.id;
   const product = await Product.findById(productId);
-  if (product) {
+  if(product) {
+    product.petClass = req.body.petClass;
     product.name = req.body.name;
     product.price = req.body.price;
     product.image = req.body.image;
@@ -88,7 +90,7 @@ router.put('/:id', isAuth, isAdmin, async (req, res) => {
   return res.status(500).send({ message: ' Error in Updating Product.' });
 });
 
-router.delete('/:id', isAuth, isAdmin, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const deletedProduct = await Product.findById(req.params.id);
   if (deletedProduct) {
     await deletedProduct.remove();
@@ -98,8 +100,9 @@ router.delete('/:id', isAuth, isAdmin, async (req, res) => {
   }
 });
 
-router.post('/', isAuth, isAdmin, async (req, res) => {
+router.post('/', async (req, res) => {
   const product = new Product({
+    petClass: req.body.petClass,
     name: req.body.name,
     price: req.body.price,
     image: req.body.image,
