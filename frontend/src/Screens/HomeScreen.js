@@ -28,7 +28,7 @@ function HomeScreen (props){
         <ul className="list-unstyled list-inline row">
           <li className="col-2 col-4-sm text-center">
             <div>
-              <button onClick={() => setPetClass("Dog")}>
+              <button className="btn-filter" onClick={() => setPetClass("Dog")}>
                 <img className="filter-pet" src="/imgs/shop-by-dog.jpg" alt="Dog"/>
               </button>
             </div>
@@ -36,7 +36,7 @@ function HomeScreen (props){
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <button onClick={() => setPetClass("Cat")}>
+              <button className="btn-filter" onClick={() => setPetClass("Cat")}>
                 <img className="filter-pet" src="/imgs/shop-by-cat.jpg" alt="Cat"/>
               </button>
             </div>
@@ -44,7 +44,7 @@ function HomeScreen (props){
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <button onClick={() => setPetClass("Fish")}>
+              <button className="btn-filter" onClick={() => setPetClass("Fish")}>
                 <img className="filter-pet" src="/imgs/shop-by-fish.jpg" alt="Fish"/>
               </button>
             </div>
@@ -52,7 +52,7 @@ function HomeScreen (props){
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <button onClick={() => setPetClass("Small Pet")}>
+              <button className="btn-filter" onClick={() => setPetClass("Small Pet")}>
                 <img className="filter-pet" src="/imgs/shop-by-small-pet.jpg" alt="Small Pet"/>
               </button>
             </div>
@@ -60,7 +60,7 @@ function HomeScreen (props){
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <button onClick={() => setPetClass("Reptile")}>
+              <button className="btn-filter" onClick={() => setPetClass("Reptile")}>
                 <img className="filter-pet" src="/imgs/shop-by-reptile.jpg" alt="Reptile"/>
               </button>
             </div>
@@ -68,7 +68,7 @@ function HomeScreen (props){
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <button onClick={() => setPetClass("Bird")}>
+              <button className="btn-filter" onClick={() => setPetClass("Bird")}>
                 <img className="filter-pet" src="/imgs/shop-by-bird.jpg" alt="Bird"/>
                 </button>
             </div>
@@ -76,8 +76,8 @@ function HomeScreen (props){
           </li>
           <li className="col-2 col-4-sm text-center">
             <div>
-              <button onClick={() => setPetClass("")}>
-                All
+              <button  className="btn-all-filter button-prm" onClick={() => setPetClass("")}>
+                Clear Filter
               </button>
             </div>
           </li>

@@ -4,6 +4,9 @@
   "description": "Demo : https://e-petshop.herokuapp.com/",
   "main": "index.js",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "aws-sdk": "^2.702.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

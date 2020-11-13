@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { saveProduct, deleteProdcut } from '../actions/productCRUD_Actions';
 import {listProducts} from '../actions/productActions';
+import { Discovery } from 'aws-sdk';
 
 function ProductsCRUD_Screen(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -90,7 +91,7 @@ function ProductsCRUD_Screen(props) {
     <div className="content content-margined">
       <div className="product-header">
         <h3>Products</h3>
-        <button className="button primary" onClick={() => openModal({})}>
+        <button className="button-prm" onClick={() => openModal({})}>
           Create Product
         </button>
       </div>
@@ -99,7 +100,7 @@ function ProductsCRUD_Screen(props) {
           <form onSubmit={submitHandler}>
             <ul className="form-container">
               <li>
-                <h2>Create Product</h2>
+                {/* <h2>Create Product</h2> */}
               </li>
               <li>
                 {loadingSave && <div>Loading...</div>}
@@ -107,8 +108,9 @@ function ProductsCRUD_Screen(props) {
               </li>
 
               <li>
-                <label htmlFor="name">Pet Class</label>
+                <label className="form-label" htmlFor="name">Pet Class</label>
                 <input
+                  className="form-input"
                   type="text"
                   name="petClass"
                   value={petClass}
@@ -117,8 +119,9 @@ function ProductsCRUD_Screen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="name">Name</label>
+                <label className="form-label" htmlFor="name">Name</label>
                 <input
+                  className="form-input"
                   type="text"
                   name="name"
                   value={name}
@@ -127,8 +130,9 @@ function ProductsCRUD_Screen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="price">Price</label>
+                <label className="form-label" htmlFor="price">Price</label>
                 <input
+                  className="form-input"
                   type="text"
                   name="price"
                   value={price}
@@ -137,8 +141,9 @@ function ProductsCRUD_Screen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="image">Image</label>
+                <label className="form-label" htmlFor="image">Image</label>
                 <input
+                  className="form-input"
                   type="text"
                   name="image"
                   value={image}
@@ -149,8 +154,9 @@ function ProductsCRUD_Screen(props) {
                 {uploading && <div>Uploading...</div>}
               </li>
               <li>
-                <label htmlFor="brand">Brand</label>
+                <label className="form-label" htmlFor="brand">Brand</label>
                 <input
+                  className="form-input"
                   type="text"
                   name="brand"
                   value={brand}
@@ -159,8 +165,9 @@ function ProductsCRUD_Screen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="countInStock">CountInStock</label>
+                <label className="form-label" htmlFor="countInStock">CountInStock</label>
                 <input
+                  className="form-input"
                   type="text"
                   name="countInStock"
                   value={countInStock}
@@ -169,8 +176,9 @@ function ProductsCRUD_Screen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="name">Category</label>
+                <label className="form-label" htmlFor="name">Category</label>
                 <input
+                  className="form-input"
                   type="text"
                   name="category"
                   value={category}
@@ -179,28 +187,27 @@ function ProductsCRUD_Screen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="description">Description</label>
+                <label className="form-label" htmlFor="description">Description</label>
                 <textarea
+                  className="form-input"
                   name="description"
                   value={description}
                   id="description"
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </li>
-              <li>
-                <button type="submit" className="button primary">
+              <div className="form-submit">
+                <button type="submit" className="button-prm btns">
                   {id ? 'Update' : 'Create'}
                 </button>
-              </li>
-              <li>
                 <button
                   type="button"
                   onClick={() => setModalVisible(false)}
-                  className="button secondary"
+                  className="button-prm btns"
                 >
                   Back
                 </button>
-              </li>
+              </div>
             </ul>
           </form>
         </div>
@@ -211,7 +218,7 @@ function ProductsCRUD_Screen(props) {
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>Item</th>
               <th>Pet Class</th>
               <th>Name</th>
               <th>Price</th>
@@ -223,18 +230,18 @@ function ProductsCRUD_Screen(props) {
           <tbody>
             {products.map((product) => (
               <tr key={product._id}>
-                <td>{product._id}</td>
+                <td><img className="product-thumbnail" src={product.image} alt=""/></td>
                 <td>{product.petClass}</td>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.category}</td>
                 <td>{product.brand}</td>
                 <td>
-                  <button className="button" onClick={() => openModal(product)}>
+                  <button className="button-prm" onClick={() => openModal(product)}>
                     Edit
                   </button>{' '}
                   <button
-                    className="button"
+                    className="button-prm"
                     onClick={() => deleteHandler(product)}
                   >
                     Delete
