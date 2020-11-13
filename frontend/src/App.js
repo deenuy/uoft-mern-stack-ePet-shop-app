@@ -64,11 +64,10 @@ function App() {
             <Route path="/product/:id" exact={true} component={ProductScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
-            <Route path="/cart" component={CartScreen} />
           </div>
         </main>
         <footer className="footer">
-          All rights reserved
+          Copyright © 2020 Group 3, BCS Coding, University of Toronto. All Rights Reserved.
         </footer>
       </div>
     </BrowserRouter>

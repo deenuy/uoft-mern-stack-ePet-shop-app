@@ -55,14 +55,15 @@ function ProductScreen(props) {
                             </div>
                             <div className="details-action">
                                 <ul>
-                                    <li>
+                                    <li className="cart-label">
                                         Price: {product.price}
                                     </li>
-                                    <li>
+                                    <li className="cart-label">
                                         Status: {product.status}
                                     </li>
                                     Qty:{' '}
                                     <select
+                                        className="cart-label"
                                         value={qty}
                                         onChange={(e) => {
                                             setQty(e.target.value);
@@ -74,9 +75,9 @@ function ProductScreen(props) {
                                             </option>
                                         ))}
                                     </select>
-                                    <li>
+                                    <li className="cart-label">
                                         {product.countInStock > 0 && (
-                                            <button onClick={handleAddToCart} className="button primary">
+                                            <button onClick={handleAddToCart} className="button-prm cart-btn">
                                                 Add to Cart
                                             </button>
                                         )}
