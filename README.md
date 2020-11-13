@@ -50,9 +50,9 @@ The data is retrieved from Yahoo Finance API, Yahoo Finance API is a reliable so
 
 ### Demo
 
-![Demo](/public/imgs/demo1.png)
-![Demo](/public/imgs/demo2.png)
-![Demo](/public/imgs/demo3.png)
+![Demo](/frontend/public/imgs/demo1.png)
+![Demo](/frontend/public/imgs/demo2.png)
+![Demo](/frontend/public/imgs/demo3.png)
 
 ## Code Contributors
 
