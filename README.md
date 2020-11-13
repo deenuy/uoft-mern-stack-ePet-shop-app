@@ -1,16 +1,17 @@
 # ePet Shop - MERN full stack app
 
-## User Story: 
-As a pet owner, I want to discover and shop pet products for healthcare, food and others related to dogs and cats. 
+## User Story:
+
+As a pet owner, I want to discover and shop pet products for healthcare, food and others related to dogs and cats.
 As a pet products retailer, I want to create a product items and publish catelog in the site with instock quantity, price and location.
 
 ## Objective:
 
-Objective of the project is to develop full stack MERN website to sell the pet products for Pet lovers called "ePet Shop". This website serves petshop owners to publish their catalog products and pricing details. And pet owners can discover and buy the products, add to cart, and checkout for payment & shipping. 
+Objective of the project is to develop full stack MERN website to sell the pet products for Pet lovers called "ePet Shop". This website serves petshop owners to publish their catalog products and pricing details. And pet owners can discover and buy the products, add to cart, and checkout for payment & shipping.
 
 ## USP:
 
-We can offer same day door-to-door delivery! 
+We can offer same day door-to-door delivery!
 
 ## Features:
 
@@ -29,25 +30,29 @@ We can offer same day door-to-door delivery!
 Hosted Url: TBD
 
 ## This repo contains:
-* README.md 
-* Index.html
-* CSS/style.css for custom styling
-* scripts/ajax-api.js for implementaiton logic
-* scripts/stocks-chart.js for financial stock chart
-* assets/img for the images used in webpage
+
+- README.md
+- Index.html
+- CSS/style.css for custom styling
+- scripts/ajax-api.js for implementaiton logic
+- scripts/stocks-chart.js for financial stock chart
+- assets/img for the images used in webpage
 
 ## Usage:
-On the main search bar, the user can type in the company name they want to learn about and hit the Search button. 
 
-The region will be the default value which is US, the default language is English. 
+On the main search bar, the user can type in the company name they want to learn about and hit the Search button.
 
-The website will return a maximum of 6 news article related to the company on the left, company's statistics on the right side and a chart of the company's stock price. 
+The region will be the default value which is US, the default language is English.
 
-The data is retrieved from Yahoo Finance API, Yahoo Finance API is a reliable source of stock market data. It also provides other financial information including market summaries, historical quotes, news feed and financial reports. 
+The website will return a maximum of 6 news article related to the company on the left, company's statistics on the right side and a chart of the company's stock price.
+
+The data is retrieved from Yahoo Finance API, Yahoo Finance API is a reliable source of stock market data. It also provides other financial information including market summaries, historical quotes, news feed and financial reports.
 
 ### Demo
 
-![Stock Demo](assets/img/demo.gif)
+![Demo](/public/imgs/demo1.png)
+![Demo](/public/imgs/demo2.png)
+![Demo](/public/imgs/demo3.png)
 
 ## Code Contributors
 
@@ -55,7 +60,8 @@ Applauds behind the success of the project [[Contribute](CONTRIBUTING.md)].
 <a href="https://github.com/deenuy/uoft-mern-stack-ePet-shop-app/graphs/contributors"><img src="https://github.com/deenuy/uoft-mern-stack-ePet-shop-app/graphs/contributors" /></a>
 
 ## Credits:
-* Deenu Yadav
-* Paulo H Correa
-* Stefan Salituro
-* Robin Swalm
+
+- Deenu Yadav
+- Paulo H Correa
+- Stefan Salituro
+- Robin Swalm
