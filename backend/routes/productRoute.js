@@ -6,8 +6,10 @@ const router = express.Router();
 
 router.get('/seed', async (req, res) => {
   try {
-    await Product.deleteMany();
-    const insertedProds = await Product.insertMany(data.products);
+    //await Product.deleteMany();
+    const newProducts = data.products.map((prod) => { return {...prod, name: prod.name + " - Test " + Date() }
+    });
+    const insertedProds = await Product.insertMany(newProducts);
     res.send(insertedProds);	
   } catch (error) {
     res.status(404).send({msg: "ERROR => " + error});

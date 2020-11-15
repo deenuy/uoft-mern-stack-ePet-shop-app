@@ -16,7 +16,6 @@ router.get("/mine", isAuth, async (req, res) => {
 router.get(
   "/:id", isAuth, async (req, res) => {
   const order = await Order.findOne({ _id: req.params.id });
-  console.log("order = " + JSON.stringify(order));
   if (order) {
     res.send(order);
   } else {
@@ -45,14 +44,12 @@ router.post("/", isAuth, async (req, res) => {
     shippingPrice: req.body.shippingPrice,
     totalPrice: req.body.totalPrice,
   });
-  //console.log("req.body = " + JSON.stringify(req.body));
-  //console.log("newOrder = " + JSON.stringify(newOrder));
   const newOrderCreated = await newOrder.save();
-  res.status(201).send({ message: "New Order Created", data: newOrderCreated });
+  console.log("newOrder._id = " + newOrder._id);
+  res.send(newOrder);
 });
 
 router.put("/:id/pay", isAuth, async (req, res) => {
-  console.log("req.params.id = " + req.params.id);
   const order = await Order.findById(req.params.id);
   if (order) {
     order.isPaid = true;

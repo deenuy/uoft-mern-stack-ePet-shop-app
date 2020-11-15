@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createOrder } from '../actions/orderActions';
+import Cookie from "js-cookie";
 function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
   const orderCreate = useSelector(state => state.orderCreate);
-  const { loading, success, error, order } = orderCreate;
+  const {order} = orderCreate;
+  const [firstTime, setFirstTime] = useState(true);
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
@@ -21,21 +23,21 @@ function PlaceOrderScreen(props) {
 
   const dispatch = useDispatch();
 
-  const placeOrderHandler = () => {
-    //console.log("shipping = " + JSON.stringify(shipping));
-    //console.log("payment = " + JSON.stringify(payment));
-    dispatch(createOrder({
-      orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice, taxPrice, totalPrice
-    }));
+  const placeOrderHandler = async () => {
+    console.log("placeOrderHandler OK");
+    dispatch(createOrder({ orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice, taxPrice, totalPrice }));
+    setFirstTime(false);
   }
+
   useEffect(() => {
-    if (success) {
+    if (order && !firstTime) {
+      console.log("order._id = " + JSON.stringify(order._id) );
       props.history.push("/order/" + order._id);
     }
+  }, [order]);
 
-  }, [success]);
 
-  return <div>
+return <div>
     <div className="placeorder">
       <div className="placeorder-info">
         <div>
@@ -43,8 +45,7 @@ function PlaceOrderScreen(props) {
             Shipping
           </h3>
           <div>
-            {cart.shipping.address}, {cart.shipping.city},
-          {cart.shipping.postalCode}, {cart.shipping.country},
+            {cart.shipping.address}, {cart.shipping.city}, {cart.shipping.postalCode}, {cart.shipping.country},
           </div>
         </div>
         <div>
@@ -121,8 +122,6 @@ function PlaceOrderScreen(props) {
             <div>${totalPrice}</div>
           </li>
         </ul>
-
-
 
       </div>
 
