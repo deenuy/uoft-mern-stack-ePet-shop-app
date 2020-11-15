@@ -24,14 +24,15 @@ const addToCart = (productId, qty) => async (dispatch, getState) => {
 }
 const removeFromCart = (productId) => (dispatch, getState) => {
   dispatch({ type: CART_REMOVE_ITEM, payload: productId });
-
   const { cart: { cartItems } } = getState();
   Cookie.set("cartItems", JSON.stringify(cartItems));
 }
 const saveShipping = (data) => (dispatch) => {
   dispatch({ type: CART_SAVE_SHIPPING, payload: data });
+  Cookie.set("shipping", JSON.stringify(data));
 }
 const savePayment = (data) => (dispatch) => {
   dispatch({ type: CART_SAVE_PAYMENT, payload: data });
+  Cookie.set("payment", JSON.stringify(data));
 }
 export { addToCart, removeFromCart, saveShipping, savePayment }

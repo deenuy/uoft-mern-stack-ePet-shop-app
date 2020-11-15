@@ -5,8 +5,20 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProductCRUD_Screen from './screens/ProductCRUD_Screen';
 import CartScreen from './screens/CartScreen';
+import SigninScreen from './screens/SigninScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import { useSelector } from 'react-redux';
+import ProfileScreen from './screens/ProfileScreen';
+import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
 
 function App() {
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open");
   }
@@ -26,7 +38,11 @@ function App() {
           <div className="header-links">
             <Link to="/ProductCRUD">Services</Link>
             <Link to="/cart">Cart</Link>
-            <a href="signin.html">Sign In</a>
+            {userInfo ? (
+              <Link to="/profile">{userInfo.name}</Link>
+            ) : (
+                <Link to="/signin">Sign In</Link>
+              )}
           </div>
         </header>
         <aside className="sidebar">
@@ -62,8 +78,15 @@ function App() {
           <div className="content">
             <Route path="/ProductCRUD" component={ProductCRUD_Screen} />
             <Route path="/product/:id" exact={true} component={ProductScreen} />
-            <Route path="/" exact={true} component={HomeScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
+            <Route path="/signin" component={SigninScreen} />
+            <Route path="/register" component={RegisterScreen} />
+            <Route path="/profile" component={ProfileScreen} />
+            <Route path="/payment" component={PaymentScreen} />
+            <Route path="/placeorder" component={PlaceOrderScreen} />
+      			<Route path="/shipping" component={ShippingScreen} />
+            <Route path="/" exact={true} component={HomeScreen} />
+            <Route path="/order/:id" component={OrderScreen} />
           </div>
         </main>
         <footer className="footer">

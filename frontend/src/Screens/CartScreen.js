@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// fontawesome Explicit import
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function CartScreen(props) {
 
@@ -20,16 +19,11 @@ function CartScreen(props) {
   }
   useEffect(() => {
     if (productId) {
-      console.log("Added: " + productId )
       dispatch(addToCart(productId, qty));
     }
   }, []);
 
-  console.log('Cart Items: ' + cartItems.length);
-
-  const checkoutHandler = () => {
-    alert("Check-out");
-  }
+  const checkoutHandler = () => { props.history.push("/signin?redirect=shipping") };
 
   return (
     <div className="cart">
@@ -39,15 +33,15 @@ function CartScreen(props) {
             <h2>
               Shopping Cart
             </h2>
-            </li>
-            {
-              cartItems.length === 0 ?
+          </li>
+          {
+            cartItems.length === 0 ?
               <div>
                 Cart is empty
               </div>
               :
               cartItems.map(item =>
-                <li className="cart-item" key={item._id}>
+                <li key={item._id} className="cart-item">
                   <div className="cart-container">
                     <div className="cart-image">
                       <img className="cart-item-img" src={item.image} alt="product" />
@@ -60,7 +54,7 @@ function CartScreen(props) {
                           </Link>
                         </div>
                         <div className="cart-item-stock">
-                          {item.countInStock > 0 ? <div className="item-in-stock">In stock</div> : <div className="item-stock-empty">Unavilable</div> }
+                          {item.countInStock > 0 ? <div className="item-in-stock">In stock</div> : <div className="item-stock-empty">Unavilable</div>}
                         </div>
                         <div className="item-qty">
                           Qty:
@@ -72,14 +66,14 @@ function CartScreen(props) {
                         </div>
                       </div>
                       <div className="item-remove-icon">
-                        <FontAwesomeIcon icon={faTrash} onClick={() => removeFromCartHandler(item.product)} style={{width: "5rem", height: "1.2rem", paddingTop: ".6rem", cursor: "pointer"}} />
+                        <FontAwesomeIcon icon={faTrash} onClick={() => removeFromCartHandler(item.product)} style={{ width: "5rem", height: "1.2rem", paddingTop: ".6rem", cursor: "pointer" }} />
                         {/* <button type="button" className="button-prm" onClick={() => removeFromCartHandler(item.product)} >
                           Delete
                         </button> */}
                       </div>
                     </div>
                     <div className="cart-price">
-                      <h3 className="item-price">${item.price  * item.qty} </h3>
+                      <h3 className="item-price">${item.price * item.qty} </h3>
                     </div>
                   </div>
                 </li>

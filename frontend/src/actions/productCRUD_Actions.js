@@ -15,13 +15,10 @@ import Axios from 'axios';
 const saveProduct = (product) => async (dispatch, getState) => {
   try {
     dispatch({ type: PRODUCT_SAVE_REQUEST, payload: product });
-    console.log("saveProduct-1 = " + product._id);
     if (!product._id) {
-      console.log("saveProduct-2 = " + JSON.stringify(product));
       const { data } = await Axios.post('/api/products', product);
       dispatch({ type: PRODUCT_SAVE_SUCCESS, payload: data });
     } else {
-      console.log("saveProduct-3 = " + product._id);
       const { data } = await Axios.put('/api/products/' + product._id, product);
       dispatch({ type: PRODUCT_SAVE_SUCCESS, payload: data });
     }
