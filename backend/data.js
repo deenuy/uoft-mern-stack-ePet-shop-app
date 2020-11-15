@@ -72,7 +72,7 @@ const data = {
     "countInStock": 71
   },
   {
-    "petClass": "Cat",
+    "petClass": "Reptile",
     "name": "KONG SoftSeas Octopus",
     "description": "KONG SoftSeas Octopus Dog Toy, Small",
     "category": "Toy",
@@ -108,7 +108,7 @@ const data = {
     "countInStock": 49
   },
   {
-    "petClass": "Dog",
+    "petClass": "Reptile",
     "name": "Nylabone Blue Bone",
     "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
     "category": "Toy",
@@ -120,7 +120,7 @@ const data = {
     "countInStock": 18
   },
   {
-    "petClass": "Dog",
+    "petClass": "Bird",
     "name": "Nylabone Blue Bone test1",
     "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
     "category": "Toy",
@@ -135,7 +135,7 @@ const data = {
     "petClass": "Dog",
     "name": "Nylabone Blue Bone test2",
     "description": "Nylabone Blue Bone Chicken Puppy Chew, X-Small",
-    "category": "Toy",
+    "category": "Pet Care",
     "image": "/uploads/img-10.jpg",
     "price": 1.99,
     "brand": "Wellness",
@@ -144,10 +144,10 @@ const data = {
     "countInStock": 18
   },
   {
-    "petClass": "Dog",
+    "petClass": "Small Pet",
     "name": "Nylabone Blue Bone 01",
     "description": "Nylabone Blue Bone 01 Chicken Puppy Chew, X-Small",
-    "category": "Toy",
+    "category": "Fashion",
     "image": "/uploads/img-10.jpg",
     "price": 1.99,
     "brand": "Wellness",
@@ -156,7 +156,7 @@ const data = {
     "countInStock": 18
   },
   {
-    "petClass": "Dog",
+    "petClass": "Small Pet",
     "name": "Nylabone Blue Bone 02",
     "description": "Nylabone Blue Bone 02 Chicken Puppy Chew, X-Small",
     "category": "Toy",
@@ -171,14 +171,62 @@ const data = {
     "petClass": "Fish",
     "name": "Nylabone Blue Bone 03",
     "description": "Nylabone Blue Bone 03 Chicken Puppy Chew, X-Small",
-    "category": "Toy",
+    "category": "Fashion",
     "image": "/uploads/img-10.jpg",
     "price": 3.99,
     "brand": "Wellness",
     "rating": 4.7,
     "numReviews": 12,
     "countInStock": 18
-  }
+  },
+  {
+    "petClass": "Bird",
+    "name": "Nylabone Blue Bird (Test)",
+    "description": "Nylabone Blue Bone 03 Chicken Puppy Chew, X-Small",
+    "category": "Fashion",
+    "image": "/uploads/img-10.jpg",
+    "price": 3.99,
+    "brand": "Wellness",
+    "rating": 4.7,
+    "numReviews": 12,
+    "countInStock": 18
+  },
+  {
+    "petClass": "Fish",
+    "name": "Nylabone Blue Fish (Test)",
+    "description": "Nylabone Blue Bone 03 Chicken Puppy Chew, X-Small",
+    "category": "Fashion",
+    "image": "/uploads/img-10.jpg",
+    "price": 3.99,
+    "brand": "Wellness",
+    "rating": 4.7,
+    "numReviews": 12,
+    "countInStock": 18
+  },
+  {
+    "petClass": "Small Pet",
+    "name": "Nylabone Blue Smal Pet (Test)",
+    "description": "Nylabone Blue Bone 03 Chicken Puppy Chew, X-Small",
+    "category": "Fashion",
+    "image": "/uploads/img-10.jpg",
+    "price": 3.99,
+    "brand": "Wellness",
+    "rating": 4.7,
+    "numReviews": 12,
+    "countInStock": 18
+  },
+  {
+    "petClass": "Reptile",
+    "name": "Nylabone Blue Reptile (Test)",
+    "description": "Nylabone Blue Bone 03 Chicken Puppy Chew, X-Small",
+    "category": "Fashion",
+    "image": "/uploads/img-10.jpg",
+    "price": 3.99,
+    "brand": "Wellness",
+    "rating": 4.7,
+    "numReviews": 12,
+    "countInStock": 18
+  },
   ]
 };
 
