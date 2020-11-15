@@ -11,6 +11,7 @@ function orderCreateReducer(state = {}, action) {
     case ORDER_CREATE_REQUEST:
       return { loading: true };
     case ORDER_CREATE_SUCCESS:
+      console.log(" action.payload = " +  JSON.stringify(action.payload));
       return { loading: false, order: action.payload, success: true };
     case ORDER_CREATE_FAIL:
       return { loading: false, error: action.payload };
