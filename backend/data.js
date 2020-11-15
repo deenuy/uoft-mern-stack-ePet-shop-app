@@ -1,4 +1,4 @@
-export default {
+const data = {
   products: [{
     "petClass": "Cat",
     "name": "WholeHearted Grain",
@@ -180,4 +180,6 @@ export default {
     "countInStock": 18
   }
   ]
-}
+};
+
+export default data;

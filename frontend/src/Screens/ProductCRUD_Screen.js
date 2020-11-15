@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { saveProduct, deleteProdcut } from '../actions/productCRUD_Actions';
-import {listProducts} from '../actions/productActions';
+import { listProducts } from '../actions/productActions';
 import { Discovery } from 'aws-sdk';
 
 function ProductsCRUD_Screen(props) {
@@ -34,7 +34,7 @@ function ProductsCRUD_Screen(props) {
     return () => {
       //
     };
-  },[successSave, successDelete]);
+  }, [successSave, successDelete]);
 
   const openModal = (product) => {
     setModalVisible(true);
@@ -89,18 +89,12 @@ function ProductsCRUD_Screen(props) {
   };
   return (
     <div className="content content-margined">
-      <div className="product-header">
-        <h3>Products</h3>
-        <button className="button-prm" onClick={() => openModal({})}>
-          Create Product
-        </button>
-      </div>
       {modalVisible && (
         <div className="form">
           <form onSubmit={submitHandler}>
             <ul className="form-container">
               <li>
-                {/* <h2>Create Product</h2> */}
+                {<h2>Create Product</h2>}
               </li>
               <li>
                 {loadingSave && <div>Loading...</div>}
@@ -212,46 +206,53 @@ function ProductsCRUD_Screen(props) {
           </form>
         </div>
       )}
-       
-      {products && !modalVisible && ( 
-      <div className="product-list">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Pet Class</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Category</th>
-              <th>Brand</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <tr key={product._id}>
-                <td><img className="product-thumbnail" src={product.image} alt=""/></td>
-                <td>{product.petClass}</td>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.category}</td>
-                <td>{product.brand}</td>
-                <td>
-                  <button className="button-prm" onClick={() => openModal(product)}>
-                    Edit
-                  </button>{' '}
-                  <button
-                    className="button-prm"
-                    onClick={() => deleteHandler(product)}
-                  >
-                    Delete
-                  </button>
-                </td>
+
+      {products && !modalVisible && (
+        <div className="product-list">
+          <div className="product-header">
+            <h3>Products</h3>
+            <button className="button-prm" onClick={() => openModal({})}>
+              Create Product
+        </button>
+          </div>
+
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Pet Class</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>)}
+            </thead>
+            <tbody>
+              {products.map((product) => (
+                <tr key={product._id}>
+                  <td><img className="product-thumbnail" src={product.image} alt="" /></td>
+                  <td>{product.petClass}</td>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>{product.category}</td>
+                  <td>{product.brand}</td>
+                  <td>
+                    <button className="button-prm" onClick={() => openModal(product)}>
+                      Edit
+                  </button>{' '}
+                    <button
+                      className="button-prm"
+                      onClick={() => deleteHandler(product)}
+                    >
+                      Delete
+                  </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>)}
     </div>
   );
 }
