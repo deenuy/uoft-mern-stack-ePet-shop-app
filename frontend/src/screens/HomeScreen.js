@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
+import PaginacionTabla from "../components/PaginacionTabla";
 
 function HomeScreen (props){
 
@@ -82,27 +83,31 @@ function HomeScreen (props){
         </ul>
       </div>
       <div className="product-container">
-        <p className="product-results">1 - 48 of 5606 results</p>
         <ul className="products">
-          {
+        <PaginacionTabla
+          itemsperpage={10}
+          nocolumns={0}
+          items={
             products.map(product => 
-            // To get the li with unique key product id
-            <li key={product._id}>
-              <div className="product">
-                <Link to={"/product/" + product._id}>
-                <img className="product-image" src={product.image} alt="product_image"/>
-                </Link>
-                <div className="product-name">
+              <li key={product._id}>
+                <div className="product">
                   <Link to={"/product/" + product._id}>
-                  {product.name}</Link>
+                  <img className="product-image" src={product.image} alt="product_image"/>
+                  </Link>
+                  <div className="product-name">
+                    <Link to={"/product/" + product._id}>
+                    {product.name}</Link>
+                  </div>
+                  <div className="product-brand">{product.brand}</div>
+                  <div className="product-price">${product.price}</div>
+                  <div className="product-rating">{product.rating} Stars ({product.numReviews})</div>
                 </div>
-                <div className="product-brand">{product.brand}</div>
-                <div className="product-price">${product.price}</div>
-                <div className="product-rating">{product.rating} Stars ({product.numReviews})</div>
-              </div>
-            </li>
-            )
-          }            
+              </li>
+              )
+          }
+          pagesspan={5}
+        />
+          { "" }            
         </ul>
       </div>
     </div>

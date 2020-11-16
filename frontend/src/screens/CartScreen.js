@@ -25,6 +25,10 @@ function CartScreen(props) {
 
   const checkoutHandler = () => { props.history.push("/signin?redirect=shipping") };
 
+  const countItems = () => {
+    return cartItems.reduce((a, c) => parseInt(a) + parseInt(c.qty), 0); 
+  }
+
   return (
     <div className="cart">
       <div className="cart-list">
@@ -73,7 +77,7 @@ function CartScreen(props) {
                       </div>
                     </div>
                     <div className="cart-price">
-                      <h3 className="item-price">${item.price * item.qty} </h3>
+                      <h3 className="item-price">${(item.price * item.qty).toFixed(2)} </h3>
                     </div>
                   </div>
                 </li>
@@ -84,9 +88,9 @@ function CartScreen(props) {
       <div className="cart-checkout">
         <div className="cart-action">
           <h3>
-            Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
+        Subtotal ({countItems()} {countItems() > 1 ? "items" : "item"})
           :
-          $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+          $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0).toFixed(2)}
           </h3>
           <button onClick={checkoutHandler} className="button primary full-width button-prm" disabled={cartItems.length === 0}>
             Proceed to Checkout

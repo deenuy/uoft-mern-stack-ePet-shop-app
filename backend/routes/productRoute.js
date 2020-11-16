@@ -1,15 +1,18 @@
 import express from 'express';
 import Product from '../models/productModel';
+import Order from '../models/orderModel';
 import data from '../data.js';
 
 const router = express.Router();
 
 router.get('/seed', async (req, res) => {
   try {
-    //await Product.deleteMany();
-    const newProducts = data.products.map((prod) => { return {...prod, name: prod.name + " - Test " + Date() }
-    });
-    const insertedProds = await Product.insertMany(newProducts);
+    await Product.deleteMany();
+    await Order.deleteMany();
+    for (var i =1; i<= 9; i++) {
+      var newProducts = data.products.map((prod) => { return {...prod, name: prod.name + " - T" + i}});
+      var insertedProds = await Product.insertMany(newProducts);
+    }
     res.send(insertedProds);	
   } catch (error) {
     res.status(404).send({msg: "ERROR => " + error});
@@ -19,22 +22,9 @@ router.get('/seed', async (req, res) => {
 router.get('/', async (req, res) => {
   const category = req.query.category ? { category: req.query.category } : {};
   const petClass = req.query.petClass ? { petClass: req.query.petClass } : {};
-  const searchKeyword = req.query.searchKeyword
-    ? {
-      name: {
-        $regex: req.query.searchKeyword,
-        $options: 'i',
-      },
-    }
-    : {};
-  const sortOrder = req.query.sortOrder
-    ? req.query.sortOrder === 'lowest'
-      ? { price: 1 }
-      : { price: -1 }
-    : { _id: -1 };
-  const products = await Product.find({ ...category, ...searchKeyword, ...petClass }).sort(
-    sortOrder
-  );
+  console.log("petClass = " + JSON.stringify(petClass));
+  console.log("category = " + JSON.stringify(category));
+  const products = await Product.find({ ...category, ...petClass });
   res.send(products);
 });
 

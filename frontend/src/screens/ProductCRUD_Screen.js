@@ -4,6 +4,7 @@ import axios from 'axios';
 import { saveProduct, deleteProdcut } from '../actions/productCRUD_Actions';
 import { listProducts } from '../actions/productActions';
 import { Discovery } from 'aws-sdk';
+import PaginacionTabla from "../components/PaginacionTabla";
 
 function ProductsCRUD_Screen(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -215,7 +216,6 @@ function ProductsCRUD_Screen(props) {
               Create Product
         </button>
           </div>
-
           <table className="table">
             <thead>
               <tr>
@@ -229,7 +229,9 @@ function ProductsCRUD_Screen(props) {
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
+            <PaginacionTabla itemsperpage={5} nocolumns={4} 
+            items={
+              products.map((product) => (
                 <tr key={product._id}>
                   <td><img className="product-thumbnail" src={product.image} alt="" /></td>
                   <td>{product.petClass}</td>
@@ -249,7 +251,7 @@ function ProductsCRUD_Screen(props) {
                   </button>
                   </td>
                 </tr>
-              ))}
+              ))} />
             </tbody>
           </table>
         </div>)}
