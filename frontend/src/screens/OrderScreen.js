@@ -50,16 +50,16 @@ function OrderScreen(props) {
             <li>
               <h3>
                 Shopping Cart
-          </h3>
+              </h3>
               <div>
                 Price
-          </div>
-            </li>
-            {
-              order.orderItems && order.orderItems.length === 0 ?
+              </div>
+              </li>
+              {
+                order.orderItems && order.orderItems.length === 0 ?
                 <div>
                   Cart is empty
-          </div>
+            </div>
                 :
                 order.orderItems.map(item =>
                   <li key={item._id}>
