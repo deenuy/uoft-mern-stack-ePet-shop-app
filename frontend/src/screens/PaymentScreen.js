@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { savePayment } from '../actions/cartActions';
+import BarMenu from "../components/BarMenu";
 
 function PaymentScreen(props) {
   const [paymentMethod, setPaymentMethod] = useState('');
@@ -14,7 +15,8 @@ function PaymentScreen(props) {
     props.history.push('placeorder');
   };
   return (
-    <div>
+    <div className="homescreen-container" >
+      <BarMenu handleCategChange={() => props.history.push('/')}/>
       <div className="form">
         <form onSubmit={submitHandler}>
           <ul className="form-container">
