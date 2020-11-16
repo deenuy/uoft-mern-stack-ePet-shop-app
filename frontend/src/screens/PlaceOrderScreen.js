@@ -40,18 +40,17 @@ function PlaceOrderScreen(props) {
 return <div>
     <div className="placeorder">
       <div className="placeorder-info">
-        <div>
-          <h3>
-            Shipping
-          </h3>
-          <div>
-            {cart.shipping.address}, {cart.shipping.city}, {cart.shipping.postalCode}, {cart.shipping.country},
+        <div className="order-add-payment">
+          <div className="order-address">
+            <h3> Shipping </h3>
+            <p>{cart.shipping.address}, </p>
+            <p>{cart.shipping.city}, </p>
+            <p>{cart.shipping.postalCode}, </p>
+            <p>{cart.shipping.country}</p>
           </div>
-        </div>
-        <div>
-          <h3>Payment</h3>
-          <div>
-            Payment Method: {cart.payment.paymentMethod}
+          <div className="order-payment">
+            <h3>Payment</h3>
+            <p>Payment Method: {cart.payment.paymentMethod}</p>
           </div>
         </div>
         <div>
@@ -59,30 +58,24 @@ return <div>
             <li>
               <h3>
                 Shopping Cart
-          </h3>
-              <div>
-                Price
-          </div>
+              </h3>
             </li>
             {
               cartItems.length === 0 ?
-                <div>
-                  Cart is empty
-          </div>
-                :
+                <div> Cart is empty </div> :
                 cartItems.map(item =>
-                  <li key={item.product}>
-                    <div className="cart-image">
-                      <img src={item.image} alt="product" />
+                  <li className="item-list" key={item.product}>
+                    <div className="order-item-img">
+                      <img className="order-item-image" src={item.image} alt="product" />
                     </div>
-                    <div className="cart-name">
-                      <div>
+                    <div className="order-cart-item">
+                      <div className="cart-item-name">
                         <Link to={"/product/" + item.product}>
                           {item.name}
                         </Link>
-
                       </div>
-                      <div>
+                      <div>{item.brand}</div>
+                      <div className="cart-qty">
                         Qty: {item.qty}
                       </div>
                     </div>
@@ -94,14 +87,9 @@ return <div>
             }
           </ul>
         </div>
-
-
       </div>
       <div className="placeorder-action">
         <ul>
-          <li>
-            <button className="button primary full-width" onClick={placeOrderHandler} >Place Order</button>
-          </li>
           <li>
             <h3>Order Summary</h3>
           </li>
@@ -117,14 +105,15 @@ return <div>
             <div>Tax</div>
             <div>${taxPrice}</div>
           </li>
-          <li>
+          <li className="order-total">
             <div>Order Total</div>
             <div>${totalPrice}</div>
           </li>
+          <li>
+            <button className="button-prm place-order-btn" onClick={placeOrderHandler} >Place Order</button>
+          </li>
         </ul>
-
       </div>
-
     </div>
   </div>
 

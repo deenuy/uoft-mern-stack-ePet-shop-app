@@ -597,3 +597,120 @@ th {
   box-shadow: 0 0 6px 0 #a56616;
   color: #be751a;
 }
+
+/* Shipping */
+.shipping-btns {
+  margin-left: 85%;
+  margin-top: 2rem;
+}
+
+/* Payment */
+.payment-btn {
+  margin-left: 80%;
+}
+
+.rdio-btn {
+  margin-left: 0.5rem;
+  margin-right: 2.5rem;
+}
+
+/* Shipping Summary Review - Place Order Screen */
+.placeorder {
+  margin: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.placeorder-info {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #dee2e6;
+  width: 66%;
+}
+.placeorder-action {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #dee2e6;
+  width: 25%;
+  height: 60%;
+  overflow: auto;
+}
+.placeorder-action > ul {
+  margin: 0;
+  padding: 0;
+}
+.placeorder-action > ul > li {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+.order-total {
+  border-top: black;
+  border-top-style: dotted;
+  font-size: medium;
+  font-weight: bold;
+}
+.order-item-image {
+  width: 12rem;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+}
+.order-item-img {
+  width: 20%;
+}
+.order-cart-item {
+  width: 50%;
+}
+.cart-price {
+  font-size: medium;
+  font-weight: bold;
+}
+.cart-item-name {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.cart-qty {
+  background: #e7e9ec;
+  border-radius: 3px;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-style: solid;
+  border-width: 1px;
+  width: 20%;
+  font-size: small;
+  padding: 0.5rem;
+}
+.place-order-btn {
+  margin-top: 2rem;
+}
+.order-add-payment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cart-list-container {
+  border-top: black;
+  border-top-style: dotted;
+}
+.order-address > p {
+  font-size: 1.4rem;
+  padding-left: 1rem;
+  line-height: 0.8em;
+}
+.order-payment > p {
+  font-size: 1.4rem;
+  line-height: 0.8em;
+}
