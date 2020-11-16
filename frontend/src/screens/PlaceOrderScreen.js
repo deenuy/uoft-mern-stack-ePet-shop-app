@@ -74,7 +74,6 @@ return <div>
                           {item.name}
                         </Link>
                       </div>
-                      <div>{item.brand}</div>
                       <div className="cart-qty">
                         Qty: {item.qty}
                       </div>
