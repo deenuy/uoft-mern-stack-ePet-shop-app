@@ -5,6 +5,7 @@ import { saveProduct, deleteProdcut } from '../actions/productCRUD_Actions';
 import { listProducts } from '../actions/productActions';
 import { Discovery } from 'aws-sdk';
 import PaginacionTabla from "../components/PaginacionTabla";
+import BarMenu from "../components/BarMenu";
 
 function ProductsCRUD_Screen(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -89,172 +90,175 @@ function ProductsCRUD_Screen(props) {
       });
   };
   return (
-    <div className="content content-margined">
-      {modalVisible && (
-        <div className="form">
-          <form onSubmit={submitHandler}>
-            <ul className="form-container">
-              <li>
-                {<h2>Create Product</h2>}
-              </li>
-              <li>
-                {loadingSave && <div>Loading...</div>}
-                {errorSave && <div>{errorSave}</div>}
-              </li>
+    <div className="homescreen-container" >
+      <BarMenu handleCategChange={() => props.history.push('/')}/>
+      <div className="content content-margined">
+        {modalVisible && (
+          <div className="form">
+            <form onSubmit={submitHandler}>
+              <ul className="form-container">
+                <li>
+                  {<h2>Create Product</h2>}
+                </li>
+                <li>
+                  {loadingSave && <div>Loading...</div>}
+                  {errorSave && <div>{errorSave}</div>}
+                </li>
 
-              <li>
-                <label className="form-label" htmlFor="name">Pet Class</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  name="petClass"
-                  value={petClass}
-                  id="petClass"
-                  onChange={(e) => setPetClass(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label className="form-label" htmlFor="name">Name</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  name="name"
-                  value={name}
-                  id="name"
-                  onChange={(e) => setName(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label className="form-label" htmlFor="price">Price</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  name="price"
-                  value={price}
-                  id="price"
-                  onChange={(e) => setPrice(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label className="form-label" htmlFor="image">Image</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  name="image"
-                  value={image}
-                  id="image"
-                  onChange={(e) => setImage(e.target.value)}
-                ></input>
-                <input type="file" onChange={uploadFileHandler}></input>
-                {uploading && <div>Uploading...</div>}
-              </li>
-              <li>
-                <label className="form-label" htmlFor="brand">Brand</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  name="brand"
-                  value={brand}
-                  id="brand"
-                  onChange={(e) => setBrand(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label className="form-label" htmlFor="countInStock">CountInStock</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  name="countInStock"
-                  value={countInStock}
-                  id="countInStock"
-                  onChange={(e) => setCountInStock(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label className="form-label" htmlFor="name">Category</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  name="category"
-                  value={category}
-                  id="category"
-                  onChange={(e) => setCategory(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label className="form-label" htmlFor="description">Description</label>
-                <textarea
-                  className="form-input"
-                  name="description"
-                  value={description}
-                  id="description"
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </li>
-              <div className="form-submit">
-                <button type="submit" className="button-prm btns">
-                  {id ? 'Update' : 'Create'}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setModalVisible(false)}
-                  className="button-prm btns"
-                >
-                  Back
-                </button>
-              </div>
-            </ul>
-          </form>
-        </div>
-      )}
-
-      {products && !modalVisible && (
-        <div className="product-list">
-          <div className="product-header">
-            <h3>Products</h3>
-            <button className="button-prm" onClick={() => openModal({})}>
-              Create Product
-        </button>
-          </div>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Pet Class</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Brand</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-            {
-              products.map((product) => (
-                <tr key={product._id}>
-                  <td><img className="product-thumbnail" src={product.image} alt="" /></td>
-                  <td>{product.petClass}</td>
-                  <td>{product.name}</td>
-                  <td>{product.price}</td>
-                  <td>{product.category}</td>
-                  <td>{product.brand}</td>
-                  <td>
-                    <button className="button-prm" onClick={() => openModal(product)}>
-                      Edit
-                  </button>{' '}
-                    <button
-                      className="button-prm"
-                      onClick={() => deleteHandler(product)}
-                    >
-                      Delete
+                <li>
+                  <label className="form-label" htmlFor="name">Pet Class</label>
+                  <input
+                    className="form-input"
+                    type="text"
+                    name="petClass"
+                    value={petClass}
+                    id="petClass"
+                    onChange={(e) => setPetClass(e.target.value)}
+                  ></input>
+                </li>
+                <li>
+                  <label className="form-label" htmlFor="name">Name</label>
+                  <input
+                    className="form-input"
+                    type="text"
+                    name="name"
+                    value={name}
+                    id="name"
+                    onChange={(e) => setName(e.target.value)}
+                  ></input>
+                </li>
+                <li>
+                  <label className="form-label" htmlFor="price">Price</label>
+                  <input
+                    className="form-input"
+                    type="text"
+                    name="price"
+                    value={price}
+                    id="price"
+                    onChange={(e) => setPrice(e.target.value)}
+                  ></input>
+                </li>
+                <li>
+                  <label className="form-label" htmlFor="image">Image</label>
+                  <input
+                    className="form-input"
+                    type="text"
+                    name="image"
+                    value={image}
+                    id="image"
+                    onChange={(e) => setImage(e.target.value)}
+                  ></input>
+                  <input type="file" onChange={uploadFileHandler}></input>
+                  {uploading && <div>Uploading...</div>}
+                </li>
+                <li>
+                  <label className="form-label" htmlFor="brand">Brand</label>
+                  <input
+                    className="form-input"
+                    type="text"
+                    name="brand"
+                    value={brand}
+                    id="brand"
+                    onChange={(e) => setBrand(e.target.value)}
+                  ></input>
+                </li>
+                <li>
+                  <label className="form-label" htmlFor="countInStock">CountInStock</label>
+                  <input
+                    className="form-input"
+                    type="text"
+                    name="countInStock"
+                    value={countInStock}
+                    id="countInStock"
+                    onChange={(e) => setCountInStock(e.target.value)}
+                  ></input>
+                </li>
+                <li>
+                  <label className="form-label" htmlFor="name">Category</label>
+                  <input
+                    className="form-input"
+                    type="text"
+                    name="category"
+                    value={category}
+                    id="category"
+                    onChange={(e) => setCategory(e.target.value)}
+                  ></input>
+                </li>
+                <li>
+                  <label className="form-label" htmlFor="description">Description</label>
+                  <textarea
+                    className="form-input"
+                    name="description"
+                    value={description}
+                    id="description"
+                    onChange={(e) => setDescription(e.target.value)}
+                  ></textarea>
+                </li>
+                <div className="form-submit">
+                  <button type="submit" className="button-prm btns">
+                    {id ? 'Update' : 'Create'}
                   </button>
-                  </td>
+                  <button
+                    type="button"
+                    onClick={() => setModalVisible(false)}
+                    className="button-prm btns"
+                  >
+                    Back
+                </button>
+                </div>
+              </ul>
+            </form>
+          </div>
+        )}
+
+        {products && !modalVisible && (
+          <div className="product-list">
+            <div className="product-header">
+              <h3>Products</h3>
+              <button className="button-prm" onClick={() => openModal({})}>
+                Create Product
+        </button>
+            </div>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Pet Class</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Category</th>
+                  <th>Brand</th>
+                  <th>Action</th>
                 </tr>
-              ))
-            }
-            </tbody>
-          </table>
-        </div>)}
+              </thead>
+              <tbody>
+                {
+                  products.map((product) => (
+                    <tr key={product._id}>
+                      <td><img className="product-thumbnail" src={product.image} alt="" /></td>
+                      <td>{product.petClass}</td>
+                      <td>{product.name}</td>
+                      <td>{product.price}</td>
+                      <td>{product.category}</td>
+                      <td>{product.brand}</td>
+                      <td>
+                        <button className="button-prm" onClick={() => openModal(product)}>
+                          Edit
+                  </button>{' '}
+                        <button
+                          className="button-prm"
+                          onClick={() => deleteHandler(product)}
+                        >
+                          Delete
+                  </button>
+                      </td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>)}
+      </div>
     </div>
   );
 }

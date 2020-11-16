@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { register } from '../actions/userActions';
+import BarMenu from "../components/BarMenu";
 
 function RegisterScreen(props) {
 
@@ -27,51 +28,55 @@ function RegisterScreen(props) {
     e.preventDefault();
     dispatch(register(name, email, password));
   }
-  return <div className="form">
-    <form onSubmit={submitHandler} >
-      <ul className="form-container">
-        <li>
-          <h2>Create Account</h2>
-        </li>
-        <li>
-          {loading && <div>Loading...</div>}
-          {error && <div>{error}</div>}
-        </li>
-        <li>
-          <label htmlFor="name">
-            Name
+  return
+  <div className="homescreen-container" >
+    <BarMenu handleCategChange={() => props.history.push('/')}/>
+    <div className="form">
+      <form onSubmit={submitHandler} >
+        <ul className="form-container">
+          <li>
+            <h2>Create Account</h2>
+          </li>
+          <li>
+            {loading && <div>Loading...</div>}
+            {error && <div>{error}</div>}
+          </li>
+          <li>
+            <label htmlFor="name">
+              Name
           </label>
-          <input type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <label htmlFor="email">
-            Email
+            <input type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
+            </input>
+          </li>
+          <li>
+            <label htmlFor="email">
+              Email
           </label>
-          <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <label htmlFor="rePassword">Re-Enter Password</label>
-          <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
-          </input>
-        </li>
-        <li>
-          <button type="submit" className="button primary">Register</button>
-        </li>
-        <li>
-          Already have an account at e-Petshop ?
+            <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
+            </input>
+          </li>
+          <li>
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
+            </input>
+          </li>
+          <li>
+            <label htmlFor="rePassword">Re-Enter Password</label>
+            <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
+            </input>
+          </li>
+          <li>
+            <button type="submit" className="button primary">Register</button>
+          </li>
+          <li>
+            Already have an account at e-Petshop ?
           <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your e-Petshop account</Link>
 
-        </li>
+          </li>
 
-      </ul>
-    </form>
+        </ul>
+      </form>
+    </div>
   </div>
 }
 export default RegisterScreen;

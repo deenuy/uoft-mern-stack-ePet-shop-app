@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { detailsProduct } from '../actions/productActions';
+import BarMenu from "../components/BarMenu";
 
 function ProductScreen(props) {
     console.log(props.match.params.id);
@@ -22,7 +23,9 @@ function ProductScreen(props) {
         props.history.push('/cart/' + props.match.params.id + '?qty=' + qty);
     };
 
-    return <div>
+    return (
+    <div className="homescreen-container" >
+        <BarMenu handleCategChange={() => props.history.push('/')}/>
         <div className="back-to-result">
             <Link to="/">Back to result</Link>
         </div>
@@ -89,6 +92,7 @@ function ProductScreen(props) {
         }
 
     </div>
+    )
 }
 
 export default ProductScreen;
