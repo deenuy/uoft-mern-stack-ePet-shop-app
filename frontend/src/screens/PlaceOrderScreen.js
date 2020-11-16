@@ -16,10 +16,12 @@ function PlaceOrderScreen(props) {
   } else if (!payment.paymentMethod) {
     props.history.push("/payment");
   }
-  const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+  var itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const shippingPrice = itemsPrice > 100 ? 0 : 10;
-  const taxPrice = 0.15 * itemsPrice;
-  const totalPrice = itemsPrice + shippingPrice + taxPrice;
+  var taxPrice = (0.15 * itemsPrice)
+  const totalPrice = (itemsPrice + shippingPrice + taxPrice).toFixed(2);
+  itemsPrice  = itemsPrice.toFixed(2);
+  taxPrice = taxPrice.toFixed(2);
 
   const dispatch = useDispatch();
 
