@@ -229,8 +229,7 @@ function ProductsCRUD_Screen(props) {
               </tr>
             </thead>
             <tbody>
-            <PaginacionTabla itemsperpage={5} nocolumns={4} 
-            items={
+            {
               products.map((product) => (
                 <tr key={product._id}>
                   <td><img className="product-thumbnail" src={product.image} alt="" /></td>
@@ -251,7 +250,8 @@ function ProductsCRUD_Screen(props) {
                   </button>
                   </td>
                 </tr>
-              ))} />
+              ))
+            }
             </tbody>
           </table>
         </div>)}
