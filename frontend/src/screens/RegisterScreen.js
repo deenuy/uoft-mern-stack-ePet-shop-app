@@ -42,35 +42,35 @@ function RegisterScreen(props) {
             {error && <div>{error}</div>}
           </li>
           <li>
-            <label htmlFor="name">
+            <label className="form-label" htmlFor="name">
               Name
           </label>
-            <input type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
+            <input className="form-input" type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
             </input>
           </li>
           <li>
-            <label htmlFor="email">
+            <label className="form-label" htmlFor="email">
               Email
           </label>
-            <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
+            <input className="form-input" type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
             </input>
           </li>
           <li>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
+            <label className="form-label" htmlFor="password">Password</label>
+            <input className="form-input" type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
             </input>
           </li>
           <li>
-            <label htmlFor="rePassword">Re-Enter Password</label>
-            <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
+            <label className="form-label" htmlFor="rePassword">Re-Enter Password</label>
+            <input className="form-input" type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
             </input>
           </li>
           <li>
-            <button type="submit" className="button primary">Register</button>
+            <button type="submit" className="button-prm">Register</button>
           </li>
           <li>
-            Already have an account at e-Petshop ?
-          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your e-Petshop account</Link>
+            Already have an account at e-Petshop?
+          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button-prm signin-btn2">Sign in</Link>
 
           </li>
 

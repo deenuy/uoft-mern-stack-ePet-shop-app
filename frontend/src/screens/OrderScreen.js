@@ -54,9 +54,9 @@ function OrderScreen(props) {
                 <h3>
                   Shopping Cart
               </h3>
-                <div>
+                {/* <div>
                   Price
-              </div>
+              </div> */}
               </li>
               {
                 order.orderItems && order.orderItems.length === 0 ?
@@ -65,18 +65,17 @@ function OrderScreen(props) {
             </div>
                   :
                   order.orderItems.map(item =>
-                    <li key={item._id}>
-                      <div className="cart-image">
-                        <img src={item.image} alt="product" />
+                    <li className="item-list" key={item._id}>
+                      <div className="order-item-img">
+                        <img className="order-item-image" src={item.image} alt="product" />
                       </div>
-                      <div className="cart-name">
-                        <div>
+                      <div className="order-cart-item">
+                        <div className="cart-item-name">
                           <Link to={"/product/" + item.product}>
                             {item.name}
                           </Link>
-
                         </div>
-                        <div>
+                        <div className="cart-qty">
                           Qty: {item.qty}
                         </div>
                       </div>
@@ -95,7 +94,7 @@ function OrderScreen(props) {
           <ul>
             {!order.isPaid ?
               <li className="placeorder-actions-payment">
-                <button onClick={() => handleSuccessPayment(true)}>Pay</button>
+                <button className="button-prm" onClick={() => handleSuccessPayment(true)}>Continue for Payment</button>
               </li>
               : ""
             }

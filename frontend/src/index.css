@@ -68,7 +68,10 @@ body {
   height: 5rem;
   background: rgba(0, 0, 0, 0.8);
   color: #ffffff;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
@@ -101,8 +104,8 @@ a:hover {
 }
 
 .filter-pet {
-  width: 9rem;
-  height: 9rem;
+  width: 7.5rem;
+  height: 7.5rem;
 }
 
 .filter-name {
@@ -170,7 +173,7 @@ a:hover {
 }
 
 .product-name {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -180,7 +183,7 @@ a:hover {
 }
 
 .product-price {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -245,6 +248,10 @@ a:hover {
   padding-left: 1rem;
 }
 
+.profile-btn {
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+}
 .hmenu-header {
   font-weight: 300;
   color: #000000;
@@ -296,7 +303,7 @@ a:hover {
 /* Product Details */
 .details {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 2rem;
@@ -307,7 +314,7 @@ a:hover {
 }
 
 .details-image img {
-  max-width: 60rem;
+  max-width: 42rem;
   widows: 100%;
   /* height: 260px;
   width: 260px; */
@@ -830,4 +837,10 @@ form {
   top: 50%;
   margin-top: -1px;
   z-index: -1;
+}
+
+/* User Profile */
+.signin-btn2 {
+  margin-left: 2.5rem;
+  margin-top: -1rem;
 }
