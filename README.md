@@ -5,6 +5,8 @@
 As a pet owner, I want to discover and shop pet products for healthcare, food and others related to dogs and cats.
 As a pet products retailer, I want to create a product items and publish catelog in the site with instock quantity, price and location.
 
+Hosted Url: https://epetshop-app.herokuapp.com/
+
 ## Objective:
 
 Objective of the project is to develop full stack MERN website to sell the pet products for Pet lovers called "ePet Shop". This website serves petshop owners to publish their catalog products and pricing details. And pet owners can discover and buy the products, add to cart, and checkout for payment & shipping.
@@ -21,22 +23,15 @@ We can offer same day door-to-door delivery!
 - Petowners should be able to search and select an item with quantity and add to Cart feature
 - Sort feature to sort by newest (date added) or sort by price
 
-### Add on features:
+### Future Roadmap:
 
 - Customer support (help page with support and contact details)
 - 3rd party authentication with Google / Facebook
 - Add profile image for seller and buyer in login information
 
-Hosted Url: TBD
+## Architecture:
 
-## This repo contains:
-
-- README.md
-- Index.html
-- CSS/style.css for custom styling
-- scripts/ajax-api.js for implementaiton logic
-- scripts/stocks-chart.js for financial stock chart
-- assets/img for the images used in webpage
+![Architecture](frontend/public/imgs/image.png)
 
 ## Usage:
 
@@ -54,12 +49,7 @@ The data is retrieved from Yahoo Finance API, Yahoo Finance API is a reliable so
 ![Demo](/frontend/public/imgs/demo2.png)
 ![Demo](/frontend/public/imgs/demo3.png)
 
-## Code Contributors
-
-Applauds behind the success of the project [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/deenuy/uoft-mern-stack-ePet-shop-app/graphs/contributors"><img src="https://github.com/deenuy/uoft-mern-stack-ePet-shop-app/graphs/contributors" /></a>
-
-## Credits:
+## Code Contributors:
 
 - Deenu Yadav
 - Paulo H Correa
