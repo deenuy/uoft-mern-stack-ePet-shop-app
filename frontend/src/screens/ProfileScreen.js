@@ -56,32 +56,31 @@ function ProfileScreen(props) {
                   {success && <div>Profile Saved Successfully.</div>}
                 </li>
                 <li>
-                  <label htmlFor="name">
+                  <label className="form-label" htmlFor="name">
                     Name
-          </label>
-                  <input value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
+                  </label>
+                  <input className="form-input" value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
                   </input>
                 </li>
                 <li>
-                  <label htmlFor="email">
+                  <label className="form-label" htmlFor="email">
                     Email
-          </label>
-                  <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
+                  </label>
+                  <input className="form-input" value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
                   </input>
                 </li>
                 <li>
-                  <label htmlFor="password">Password</label>
-                  <input value={password} type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
+                  <label className="form-label"  htmlFor="password">Password</label>
+                  <input className="form-input" value={password} type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
                   </input>
                 </li>
 
                 <li>
-                  <button type="submit" className="button primary">Update</button>
+                  <div>
+                    <button type="submit" className="button-prm profile-btn">Update</button>
+                    <button type="button" onClick={handleLogout} className="button-prm profile-btn">Logout</button>
+                  </div>
                 </li>
-                <li>
-                  <button type="button" onClick={handleLogout} className="button secondary full-width">Logout</button>
-                </li>
-
               </ul>
             </form>
           </div>
