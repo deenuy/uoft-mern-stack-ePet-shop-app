@@ -8,8 +8,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
     "aws-sdk": "^2.702.0",
-    "babel-cli": "^6.26.0",
-    "babel-node": "0.0.1-security",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "eslint-plugin-react": "^7.19.0",
@@ -18,9 +16,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.11",
     "multer": "^1.4.2",
-    "multer-s3": "^2.9.0"
-  },
-  "devDependencies": {
+    "multer-s3": "^2.9.0",
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/node": "^7.8.4",
