@@ -9,6 +9,9 @@ import orderRoute from './routes/orderRoute';
 import uploadRoute from './routes/uploadRoute';
 
 const mongodbUrl = config.MONGODB_URL;
+
+// npm install babel-cli -S
+
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
