@@ -32,7 +32,7 @@ function App() {
       </main>
       <footer className="footer">
         Copyright © 2020 Group 3, BCS Coding, University of Toronto. All Rights Reserved.
-        </footer>
+      </footer>
     </BrowserRouter>
   );
 }

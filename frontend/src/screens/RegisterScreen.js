@@ -28,7 +28,7 @@ function RegisterScreen(props) {
     e.preventDefault();
     dispatch(register(name, email, password));
   }
-  return
+  return (
   <div className="homescreen-container" >
     <BarMenu handleCategChange={() => props.history.push('/')}/>
     <div className="form">
@@ -78,5 +78,6 @@ function RegisterScreen(props) {
       </form>
     </div>
   </div>
+  )
 }
 export default RegisterScreen;
