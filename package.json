@@ -21,7 +21,7 @@
     "@babel/core": "^7.8.4",
     "@babel/node": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.17"
   },
   "scripts": {
     "start": "babel-node backend/server.js",
